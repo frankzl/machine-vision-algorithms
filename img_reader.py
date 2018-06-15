@@ -9,6 +9,12 @@ def read_img(path):
     return misc.imread(path)
 
 def show_img(img):
+    height, width = img.shape
+    # What size does the figure need to be in inches to fit the image?  
+    dpi = 80
+    figsize = width / float(dpi), height / float(dpi)
+    
+    fig = plt.figure(figsize=figsize)
     plt.imshow(img, cmap=plt.cm.gray)
     plt.show()
     return
